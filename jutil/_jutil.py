@@ -26,7 +26,7 @@ def jtree(cls, *dargs, **dkwargs):
         def _op(self, *others):
             # Admits a limited form of broadcasting
             if others and isinstance(others[0], type(self)):
-                return tree_map(self, *others)
+                return tree_map(f, self, *others)
             return tree_map(lambda a: f(a, *others), self)
         return _op
 
